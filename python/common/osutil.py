@@ -7,7 +7,6 @@ def check_files(root, file_name_list):
         if not os.path.isfile(file_path):
             raise ValueError("File not exist: " + file_path)
 
-def ensure_dir(path):
-    directory = os.path.dirname(path)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+def mkdir_if_missing(dir_path):
+    if not os.path.exists(dir_path):
+        os.makedirs(dir_path)
